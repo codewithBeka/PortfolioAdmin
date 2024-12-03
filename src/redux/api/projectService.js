@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const projectApi = createApi({
     reducerPath: 'projectApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api/projects' , credentials: 'include',}),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://codewithbeka.onrender.com/api/projects' , credentials: 'include',}),
     tagTypes: ['Project'],
     endpoints: (builder) => ({
         getProjects: builder.query({

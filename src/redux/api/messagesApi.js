@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const messagesApi = createApi({
   reducerPath: 'messagesApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api/messages', credentials: 'include' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://codewithbeka.onrender.com/api/messages', credentials: 'include' }),
   endpoints: (builder) => ({
     getMessages: builder.query({
       query: () => '',

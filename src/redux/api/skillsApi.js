@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const skillsApi = createApi({
     reducerPath: 'skillsApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:8000/api/skills',
+        baseUrl: 'https://codewithbeka.onrender.com/api/skills',
         credentials: 'include',
     }),
     endpoints: (builder) => ({

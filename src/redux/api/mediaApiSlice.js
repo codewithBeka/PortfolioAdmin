@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const mediaApiSlice = createApi({
     reducerPath: 'mediaApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api' ,credentials: 'include',}), // Adjust the base URL as needed
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://codewithbeka.onrender.com/api' ,credentials: 'include',}), // Adjust the base URL as needed
     endpoints: (builder) => ({
         uploadMedia: builder.mutation({
             query: (formData) => ({

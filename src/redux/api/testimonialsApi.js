@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const testimonialsApi = createApi({
   reducerPath: 'testimonialsApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api/testimonials' , credentials: 'include',}),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://codewithbeka.onrender.com/api/testimonials' , credentials: 'include',}),
   tagTypes: ['Testimonial'],
   endpoints: (builder) => ({
     getAllTestimonials: builder.query({
