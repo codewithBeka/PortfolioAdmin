@@ -79,7 +79,7 @@ console.log("Notification List:", notificationList);
   };
 
   return (
-    <ClickOutside onClick={() => setDropdownOpen(false)} className="relative bg-gray-800 bg-opacity-50">
+    <ClickOutside onClick={() => setDropdownOpen(false)} className="relative z-100 bg-gray-800 bg-opacity-50">
       <li>
         <Link
           onClick={handleDropdownToggle}

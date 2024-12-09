@@ -8,8 +8,11 @@ import { AlertTriangle, DollarSign, Package, TrendingUp } from "lucide-react";
 import CategoryDistributionChart from "../components/overview/CategoryDistributionChart";
 import SalesTrendChart from "../components/products/SalesTrendChart";
 import ProductsTable from "../components/products/ProductsTable";
+import { useNavigate } from "react-router-dom";
 
-const ProductsPage = () => {
+const ProductsPage = () => {   
+	 const navigate = useNavigate();
+
 	return (
 		<div className='flex-1 overflow-auto relative z-10'>
 			<Header title='Products' />

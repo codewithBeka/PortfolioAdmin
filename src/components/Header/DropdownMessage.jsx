@@ -9,7 +9,7 @@ const DropdownMessage = () => {
   const [notifying, setNotifying] = useState(true);
 
   return (
-    <ClickOutside onClick={() => setDropdownOpen(false)} className="relative z-30 bg-gray-800 bg-opacity-50">
+    <ClickOutside onClick={() => setDropdownOpen(false)} className="relative z-100 bg-gray-800 bg-opacity-50">
       <li className="relative">
         <Link
           onClick={() => {

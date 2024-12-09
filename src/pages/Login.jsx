@@ -20,7 +20,7 @@ export default function Login(){
   
     const { search } = useLocation();
     const sp = new URLSearchParams(search);
-    const redirect = sp.get("redirect") || "/dashboard";
+    const redirect = sp.get("redirect") || "/";
   
     useEffect(() => {
       if (userData) {
