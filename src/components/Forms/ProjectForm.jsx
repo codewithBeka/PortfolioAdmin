@@ -31,7 +31,7 @@ const ProjectForm = () => {
         videoUrl: '',
 
     });
-
+   const [Loading,setLoading]=useState(false)
     // Log projectData and project state for debugging
     console.log("projectData", projectData);
     console.log("project", project);
@@ -171,6 +171,8 @@ const ProjectForm = () => {
 
     const deleteMediaFile = async (index) => {
         const publicId = project.media[index]?.publicId;
+        console.error('Delete media publicId:', publicId);
+        console.error(' media publicId:', project.media);
         if (publicId) {
             try {
                 await deleteMedia({ publicId, resourceType: 'image' });
@@ -198,13 +200,16 @@ const ProjectForm = () => {
         }
     };
     const handleSubmit = async (e) => {
+        setLoading(true)
         e.preventDefault();
         try {
             if (projectData) {
                 await updateProject({ id: projectData._id, ...project }).unwrap();
+                setLoading(false)
                 toast.success('Project updated successfully');
             } else {
                 await createProject(project).unwrap();
+                setLoading(false)
                 toast.success('Project created successfully');
                      // Reset the form state
             setProject({
@@ -276,7 +281,6 @@ const ProjectForm = () => {
                     value={project.liveUrl}
                     onChange={handleChange}
                     className="border p-2 mb-4 bg-gray-800 bg-opacity-50"
-                    required
                 />
                 <input
                     type="url"
@@ -285,7 +289,6 @@ const ProjectForm = () => {
                     value={project.githubUrl}
                     onChange={handleChange}
                     className="border p-2 mb-4 bg-gray-800 bg-opacity-50"
-                    required
                 />
                 <label className="border p-4 mb-4 cursor-pointer">
                     <input
@@ -298,6 +301,7 @@ const ProjectForm = () => {
                 </label>
                 <div className="mb-4">
                     {project.media.map((file, index) => (
+                        console.log("index",file),
                         <div key={index} className="flex items-center mb-2">
                             <img src={file.url} alt={`media-${index}`} className="h-20 w-20 object-cover mr-2" />
                             <button type="button" onClick={() => deleteMediaFile(index)} className="text-red-500 ml-2">Delete</button>
